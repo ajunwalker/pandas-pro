@@ -8,7 +8,8 @@ class Frame(pd.DataFrame):
         Args:
             filename: Location of CSV file to be loaded.
         """
-        self.df = pd.read_csv(filename)
+        df = pd.read_csv(filename)
+        super().__init__(data=df)
 
 
     def transform(self, column: str, transformation: float) -> None:
